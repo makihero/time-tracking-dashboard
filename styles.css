@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --Blue: hsl(246, 80%, 60%);
+    --Light-Red-Work: hsl(15, 100%, 70%);
+    --Soft-Blue-Play: hsl(195, 74%, 62%);
+    --Light-Red-Study: hsl(348, 100%, 68%);
+    --Lime-Green-Exercise: hsl(145, 58%, 55%);
+    --Violet-Social: hsl(264, 64%, 52%);
+    --Soft-Orange-Self-Care: hsl(43, 84%, 65%);
+
+    --Very-Dark-Blue: hsl(226, 43%, 10%);
+    --Dark-Blue: hsl(235, 46%, 20%);
+    --Desaturated-Blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+
+    --Font: 'Rubik', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--Font);
+    background-color: var(--Very-Dark-Blue);
+    color: var(--Pale-Blue);
+}
+
+.main-container {
+    width: 330px;
+    margin: 77px auto;
+}
+
+.main-card {
+    background-color: var(--Dark-Blue);
+    border-radius: 15px;
+    & .main-card__user {
+        display: flex;
+        padding: 30px 25px;
+        background-color: var(--Blue);
+        border-radius: 15px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.086);
+    }
+
+    & .main-card__image {
+        width: 50px;
+        height: 50px;
+        border: 2px solid white;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+    & .main-card__title {
+        margin-top: 5px;
+        font-size: 0.8em;
+        font-weight: 300;
+    }
+
+    & .main-card__name {
+        color: white;
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+
+    & .main-card__dates {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px 0;
+    }
+
+    & .main-card__button {
+        background-color: transparent;
+        border: none;
+        color: var(--Desaturated-Blue);
+        font-weight: 400;
+        font-size: 0.8em;
+        cursor: pointer;
+
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+.second-section {
+    margin-top: 20px;
+
+    & .card {
+        margin-bottom: 20px;
+        background-color: var(--Light-Red-Work);
+        border-radius: 15px 15px 20px 20px;
+
+        & .card__background {
+            overflow: hidden;
+            width: 100%;
+            height: 35px;
+        }
+
+        & .card__image {
+            width: 70px;
+            margin-top: -10px;
+            display: block;
+            margin-left: 235px;
+        }
+
+        & .card__details {
+            background-color: var(--Dark-Blue);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            &:hover {
+                background-color: var(--Desaturated-Blue);
+                cursor: pointer;
+            }
+        }
+
+        & .card__activity {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        & .card__title {
+            color: white;
+        }
+
+        & .card__time {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        & .card__hours {
+            color: white;
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+
+        & .card__previous {
+            color: var(--Pale-Blue);
+            font-weight: 300;
+            font-size: 0.8em;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .main-container {
+        width: 1150px;
+        display: flex;
+        margin: 160px auto;
+    }
+
+    .first-section {
+        width: 290px;
+    }
+
+    .second-section {  
+        margin: 0 24px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+        & .card {
+            margin-bottom: 0;
+        }
+
+        & .card__background {
+            height: 50px;
+        }
+
+        & .card__image {
+            margin-left: 150px !important;
+        }
+
+    }
+
+    .main-card__user {
+        flex-direction: column;
+        align-items: flex-start;
+
+        & .main-card__image {
+            width: 85px;
+            height: 85px;
+            margin-bottom: 45px;
+        }
+
+        & .main-card__title {
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        & .main-card__name {
+            font-size: 1.8em;
+        }
+
+    }
+
+    .main-card__dates {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 25px;
+        gap: 10px;
+    }
+
+    .main-card__button {
+        font-size: 1em;
+        font-weight: 400;
+    }
+
+    .card {
+        width: 240px;
+    }
+
+    .card__time {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+
+        & .card__hours {
+            font-size: 2.5em !important;
+        }
+    }
+    
+}
